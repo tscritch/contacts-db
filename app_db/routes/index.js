@@ -16,11 +16,11 @@ router.get('/contacts', contacts.getAll);
 // create contact
 router.post('/contacts', contacts.create);
 // get contact
-router.get('/contacts/:contactId', contacts.get);
+router.get('/contacts/:id', contacts.get);
 // update contact
-router.put('/contacts/:contactId', contacts.update);
+router.put('/contacts/:id', contacts.update);
 // delete contact
-router.delete('/contacts/:contactId', contacts.delete);
+router.delete('/contacts/:id', contacts.delete);
 
 
 module.exports = router;

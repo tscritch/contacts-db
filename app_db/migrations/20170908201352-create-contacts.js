@@ -28,7 +28,7 @@ module.exports = {
       },
       firstname: {
         type: Sequelize.STRING,
-        allowNull: true
+        allowNull: false
       },
       middleinitial: {
         type: Sequelize.STRING,
@@ -63,22 +63,22 @@ module.exports = {
       },
       email: {
         type: Sequelize.STRING,
-        allowNull: false,
+        allowNull: true,
         validate: {
           is: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/i
         }
       },
       username: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: true
       },
       password: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: true
       },
       browser: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: true
       },
       phone: {
         type: Sequelize.STRING,

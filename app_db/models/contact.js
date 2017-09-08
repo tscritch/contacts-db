@@ -13,7 +13,7 @@ module.exports = function(sequelize, t) {
     },
     firstname: {
       type: t.STRING,
-      allowNull: true
+      allowNull: false
     },
     middleinitial: {
       type: t.STRING,
@@ -48,22 +48,22 @@ module.exports = function(sequelize, t) {
     },
     email: {
       type: t.STRING,
-      allowNull: false,
+      allowNull: true,
       validate: {
         is: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/i
       }
     },
     username: {
       type: t.STRING,
-      allowNull: false
+      allowNull: true
     },
     password: {
       type: t.STRING,
-      allowNull: false
+      allowNull: true
     },
     browser: {
       type: t.STRING,
-      allowNull: false
+      allowNull: true
     },
     phone: {
       type: t.STRING,
