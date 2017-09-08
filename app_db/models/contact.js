@@ -154,7 +154,7 @@ module.exports = function(sequelize, t) {
         isLatLong: true
       }
     },
-    latitude: {
+    longitude: {
       type: t.STRING,
       allowNull: true,
       validate: {
