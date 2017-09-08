@@ -5,7 +5,7 @@ var bodyParser = require('body-parser');
 var database = require('./app_db/models/index');
 
 database.sequelize.sync({
-  force: true,
+  force: false,
 }).then(function () {
   console.log("Finished syncing database...");
 });
