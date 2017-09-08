@@ -8,15 +8,16 @@ var sendJSONResponse = function(res, status, content) {
 var Contact = {};
 
 Contact.getAll = function(req, res) {
-  models.Contacts.findAll().then(function(contacts) {
+  models.Contact.findAll().then(function(contacts) {
     res.status(200);
     res.json(contacts);
-});
+  });
+};
 
 // Create
 Contact.create = function (req, res) {
-  if(!req.params.sprintId) {
-    sendJSONResponse(res, 404, {"message": "sprintId is a required parameter"});
+  if(!req.params.id) {
+    sendJSONResponse(res, 404, {"message": "id is a required parameter"});
     return;
   }
   if(!req.body.contacttitle) {
