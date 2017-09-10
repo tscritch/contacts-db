@@ -8,10 +8,20 @@ var sendJSONResponse = function(res, status, content) {
 var Contact = {};
 
 Contact.getAll = function(req, res) {
-  models.Contact.findAll().then(function(contacts) {
-    res.status(200);
-    res.json(contacts);
-  });
+  var page = req.query.page ? { limit: 100, offset: parseInt(req.query.page) * 100 } : null;
+  if (page) {
+    models.Contact.findAll(page).then(function(contacts) {
+      res.status(200);
+      res.json(contacts);
+    });
+  }
+  else {
+    models.Contact.findAll().then(function(contacts) {
+      res.status(200);
+      res.json(contacts);
+    });
+  }
+
 };
 
 // Create
