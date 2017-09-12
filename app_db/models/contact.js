@@ -67,10 +67,7 @@ module.exports = function(sequelize, t) {
     },
     phone: {
       type: t.STRING,
-      allowNull: true,
-      validate: {
-        isMobilePhone: true
-      }
+      allowNull: true
     },
     phoneCountryCode: {
       type: t.STRING,
@@ -146,17 +143,11 @@ module.exports = function(sequelize, t) {
     },
     latitude: {
       type: t.STRING,
-      allowNull: true,
-      validate: {
-        isLatLong: true
-      }
+      allowNull: true
     },
     longitude: {
       type: t.STRING,
-      allowNull: true,
-      validate: {
-        isLatLong: true
-      }
+      allowNull: true
     },
   });
   return Contact;
