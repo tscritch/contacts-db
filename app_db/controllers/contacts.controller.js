@@ -11,14 +11,12 @@ Contact.getAll = function(req, res) {
   var page = req.query.page ? { limit: 100, offset: parseInt(req.query.page) * 100 } : null;
   if (page) {
     models.Contact.findAll(page).then(function(contacts) {
-      res.status(200);
-      res.json(contacts);
+      sendJSONResponse(res, 200, contacts);
     });
   }
   else {
     models.Contact.findAll().then(function(contacts) {
-      res.status(200);
-      res.json(contacts);
+      sendJSONResponse(res, 200, contacts);
     });
   }
 
@@ -47,7 +45,7 @@ Contact.create = function (req, res) {
       sendJSONResponse(res, 500, {"message": "There was an error creating the contact"});
     }
   }, function (error) {
-    sendJSONResponse(res, 422, {"message": JSON.stringify(error.message)});
+    sendJSONResponse(res, 422, error);
   });
 };
 
