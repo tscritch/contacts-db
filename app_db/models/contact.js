@@ -94,10 +94,7 @@ module.exports = function(sequelize, t) {
     },
     ccNumber: {
       type: t.STRING,
-      allowNull: true,
-      validate: {
-        isCreditCard: true
-      }
+      allowNull: true
     },
     ccv2: {
       type: t.INTEGER,
