@@ -3,19 +3,6 @@
 module.exports = {
   up: function (queryInterface, Sequelize) {
     return queryInterface.createTable('Contacts', {
-      id: {
-        type: Sequelize.INTEGER,
-        primaryKey: true,
-        autoIncrement: true
-      },
-      createdAt: {
-        type: Sequelize.DATE,
-        defaultValue: new Date()
-      },
-      updatedAt: {
-        type: Sequelize.DATE,
-        defaultValue: new Date()
-      },
       title: {
         type: Sequelize.STRING,
         allowNull: true
